@@ -99,7 +99,31 @@
 </section>
 
 
+ <!-- Result Images with Captions -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3 has-text-centered">Visual Results</h2>
 
+    <div class="content">
+      <figure>
+        <img src="static/images/work_flow.png" alt="TOA Radiance Visualization">
+        <figcaption class="has-text-centered">
+          <strong>Figure 1:</strong> Our proposed workflow consists of six key steps: (a) We generate synthetic hyperspectral images to provide diverse
+training data for the deep learning model. (b) We then train a 3D UNet architecture for the atmospheric correction task,
+allowing the model to process three-dimensional data and learn how to correct atmospheric interference. (c) We propose a
+novel UNet lightweight model. (d) We employ a student-teacher strategy to train a smaller, more efficient model guided by
+a larger, well-trained teacher model. (e) The model is compressed using static quantization to reduce its size and improve
+efficiency, making it suitable for deployment on edge devices like the Raspberry Pi 4. (f) Finally, we deploy the compressed
+UNet model onto a Raspberry Pi 4, enabling fast atmospheric correction on the edge for efficient data processing in various
+applications
+        </figcaption>
+      </figure>
+
+      <!-- Add more figures here as needed -->
+    </div>
+  </div>
+</section>
+  
 <!-- Paper abstract -->
 <section class="section hero is-light">
   <div class="container is-max-desktop">
