@@ -102,20 +102,16 @@
  <!-- Result Images with Captions -->
 <section class="section">
   <div class="container is-max-desktop">
-    <h2 class="title is-3 has-text-centered">Visual Results</h2>
+    <h2 class="title is-3 has-text-centered"></h2>
 
     <div class="content">
       <figure>
         <img src="static/images/work_flow.png" alt="TOA Radiance Visualization">
         <figcaption class="has-text-centered">
-          <strong>Figure 1:</strong> Our proposed workflow consists of six key steps: (a) We generate synthetic hyperspectral images to provide diverse
-training data for the deep learning model. (b) We then train a 3D UNet architecture for the atmospheric correction task,
-allowing the model to process three-dimensional data and learn how to correct atmospheric interference. (c) We propose a
-novel UNet lightweight model. (d) We employ a student-teacher strategy to train a smaller, more efficient model guided by
-a larger, well-trained teacher model. (e) The model is compressed using static quantization to reduce its size and improve
-efficiency, making it suitable for deployment on edge devices like the Raspberry Pi 4. (f) Finally, we deploy the compressed
-UNet model onto a Raspberry Pi 4, enabling fast atmospheric correction on the edge for efficient data processing in various
-applications
+          <strong>Figure 1:</strong> Our proposed workflow consists of six key steps: (a) We generate synthetic hyperspectral images to provide diverse training data for the deep learning model. (b) We then train a 3D UNet architecture for the atmospheric correction task,
+allowing the model to process three-dimensional data and learn how to correct atmospheric interference. (c) We propose a novel UNet lightweight model. (d) We employ a student-teacher strategy to train a smaller, more efficient model guided by
+a larger, well-trained teacher model. (e) The model is compressed using static quantization to reduce its size and improve efficiency, making it suitable for deployment on edge devices like the Raspberry Pi 4. (f) Finally, we deploy the compressed
+UNet model onto a Raspberry Pi 4, enabling fast atmospheric correction on the edge for efficient data processing in various applications.
         </figcaption>
       </figure>
 
@@ -144,7 +140,7 @@ applications
  <!-- Result Images with Captions -->
 <section class="section">
   <div class="container is-max-desktop">
-    <h2 class="title is-3 has-text-centered">Visual Results</h2>
+    <h2 class="title is-3 has-text-centered">Problems</h2>
 
     <div class="content">
       <figure>
@@ -154,18 +150,63 @@ applications
         </figcaption>
       </figure>
 
-      <figure>
-        <img src="static/images/exp_1.png" alt="Experiment 1 Visualization">
-        <figcaption class="has-text-centered">
-          <strong>Figure 2:</strong> Example output after atmospheric correction showing improved surface reflectance.
-        </figcaption>
-      </figure>
-
       <!-- Add more figures here as needed -->
     </div>
   </div>
 </section>
-  
+
+<!-- Table Results Carousel -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3 has-text-centered">Quantitative Results</h2>
+    <div id="table-carousel" class="carousel results-carousel">
+      <div class="item">
+        <figure class="image is-4by3">
+          <img src="static/images/table1.png" alt="Performance Table 1">
+        </figure>
+        <h2 class="subtitle has-text-centered">
+          <strong>Table 1:</strong>  Experimental results using different methods.
+        </h2>
+      </div>
+
+      <div class="item">
+        <figure class="image is-4by3">
+          <img src="static/images/table2.png" alt="Performance Table 2">
+        </figure>
+        <h2 class="subtitle has-text-centered">
+          <strong>Table 2:</strong>  Experimental results of different methods on the RPi4.
+        </h2>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Visual Results Carousel -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3 has-text-centered">Qualitative Visualizations</h2>
+    <div id="visual-carousel" class="carousel results-carousel">
+      <div class="item">
+        <figure class="image is-4by3">
+          <img src="static/images/exp_1.png" alt="Visual Result 1">
+        </figure>
+        <h2 class="subtitle has-text-centered">
+          <strong>Figure 1:</strong>  Visualization of TOA reflectance, surface reflectance, and inferred surface reflectance for land and water surface.
+        </h2>
+      </div>
+
+      <div class="item">
+        <figure class="image is-4by3">
+          <img src="static/images/exp_2.png" alt="Visual Result 2">
+        </figure>
+        <h2 class="subtitle has-text-centered">
+          <strong>Figure 2:</strong> Visualization of TOA reflectance, surface reflectance, and inferred surface reflectance for land surface.
+        </h2>
+      </div>
+    </div>
+  </div>
+</section>
+
 
 <!-- Teaser video-->
 <section class="hero teaser">
