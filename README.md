@@ -1,4 +1,4 @@
-# Academic Project Page Template
+
 This is the project page for the paper "Efficient Atmospheric Correction for Onboard Processing Using Knowledge Distillation and Model Compression".
 
 
