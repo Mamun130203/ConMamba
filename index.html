@@ -74,11 +74,11 @@
                       <span>Paper</span>
                     </a>
 
-                    <!-- ArXiv link -->
-                    <a href="https://publications.csiro.au/publications/publication/PIcsiro:EP2024-3066/RI10/RT19" target="_blank"
+                    <!-- ArXiv link with icon -->
+                    <a href="https://arxiv.org/abs/your-arxiv-id" target="_blank"
                       class="external-link button is-normal is-rounded is-dark">
                       <span class="icon">
-                        <i class="fas fa-file-pdf"></i>
+                        <i class="ai ai-arxiv"></i>
                       </span>
                       <span>ArXiv</span>
                     </a>
@@ -102,12 +102,9 @@
 
     <div class="content">
       <figure>
-        <img src="static/images/work_flow.png" alt="TOA Radiance Visualization">
+        <img src="static/images/method.png" alt="TOA Radiance Visualization">
         <figcaption class="has-text-centered">
-          <strong>Figure 1:</strong> Our proposed workflow consists of six key steps: (a) We generate synthetic hyperspectral images to provide diverse training data for the deep learning model. (b) We then train a 3D UNet architecture for the atmospheric correction task,
-allowing the model to process three-dimensional data and learn how to correct atmospheric interference. (c) We propose a novel UNet lightweight model. (d) We employ a student-teacher strategy to train a smaller, more efficient model guided by
-a larger, well-trained teacher model. (e) The model is compressed using static quantization to reduce its size and improve efficiency, making it suitable for deployment on edge devices like the Raspberry Pi 4. (f) Finally, we deploy the compressed
-UNet model onto a Raspberry Pi 4, enabling fast atmospheric correction on the edge for efficient data processing in various applications.
+          <strong>Figure 1:</strong> Schematic representation of the ConMamba framework. The framework begins with Stage 1 (Contrastive data augmentation): Data augmentation is applied to input images to generate two distinct augmented views for each input image. Stage 2 (Feature representation with Vision Mamba): Each augmented view undergoes patch embedding followed by the Vision Mamba Encoder (VME) to obtain meaningful bidirectional feature representations. Stage 3 (Loss calculation): A dual-level Contrastive loss with dynamic weight adjustment is employed to maximize local pairwise similarity (intra-class contrast) and global alignment (inter-class contrast). Finally, Stage 4 (Plant disease classification): The plant disease classification task adapts the learned representations for plant disease classification, utilizing the embedding vectors to produce class predictions.
         </figcaption>
       </figure>
 
@@ -124,7 +121,7 @@ UNet model onto a Raspberry Pi 4, enabling fast atmospheric correction on the ed
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            This paper introduces an innovative deep learning-based solution for atmospheric correction in remote sensing, specifically designed for resource-constrained spaceborne systems. We train the UNet deep learning model with 3D kernels on a synthetic dataset derived from Hyperion imagery over Australia and then utilize knowledge distillation to develop a lightweight model that maintains accuracy while minimizing computational demands. The lightweight model undergoes static quantization and is then deployed on the Raspberry Pi 4 platform. The Raspberry Pi 4 is known for its computational efficiency and aligns with spaceborne computational constraints, offering a practical solution for onboard processing. Major contributions include utilizing available remote sensing data and a physics-based method to create an extensive synthetic dataset resembling typical atmospheric conditions and geographic terrains, as well as outlining an AI processing workflow encompassing synthetic dataset generation, optimal model training, knowledge distillation for lightweight model training, and model compression through static quantization for resource-constrained environments. The results demonstrate the successful deployment of atmospheric correction on the Raspberry Pi 4.
+            Plant Disease Detection (PDD) is a key aspect of precision agriculture. However, existing deep learning methods often rely on extensively annotated datasets, which are time-consuming and costly to generate. Self-supervised Learning (SSL) offers a promising alternative by exploiting the abundance of unlabeled data. However, most existing SSL approaches suffer from high computational costs due to convolutional neural networks or transformer-based architectures. Additionally, they struggle to capture long-range dependencies in visual representation and rely on static loss functions that fail to align local and global features effectively. To address these challenges, we propose ConMamba, a novel SSL framework specially designed for PDD. ConMamba integrates the Vision Mamba Encoder (VME), which employs a bidirectional State Space Model (SSM) to capture long-range dependencies efficiently. Furthermore, we introduce a dual-level contrastive loss with dynamic weight adjustment to optimize local-global feature alignment. Experimental results on three benchmark datasets demonstrate that ConMamba significantly outperforms state-of-the-art methods across multiple evaluation metrics. This provides an efficient and robust solution for PDD.
           </p>
         </div>
       </div>
@@ -133,26 +130,36 @@ UNet model onto a Raspberry Pi 4, enabling fast atmospheric correction on the ed
 </section>
 <!-- End paper abstract -->
 
- <!-- Result Images with Captions -->
+<!-- Problems Carousel -->
 <section class="section">
   <div class="container is-max-desktop">
     <h2 class="title is-3 has-text-centered">Problems</h2>
+    <div id="problems-carousel" class="carousel results-carousel">
 
-    <div class="content">
-      <figure>
-        <img src="static/images/TOA.png" alt="TOA Radiance Visualization">
-        <figcaption class="has-text-centered">
-          <strong>Figure 1:</strong> Satellite images or images captured from sensors are important for monitoring environmental changes, land cover classification. These images represent the reflectance from the earth surface, which is key to understanding various surface patterns.
-However, as the light travels from the sun to the Earth's surface and then reflects back up to the satellite or airborne sensor, it passes through the atmosphere. During this journey, the light can be scattered or absorbed by atmospheric particles, leading to distortions in the captured data. These atmospheric effects can significantly alter the true reflectance values of the surface, it makes  the raw data less reliable for analysis.
-Atmospheric correction is a process applied to this raw data to remove or minimize these distortions, so that we can obtain more accurate surface reflectance values.  To ensue that the captured data is reliable for applications. 
-Since the atmospheric correction needs to be performed on satellites or sensors with limited computational resources. So there is a need to develop lightweight models with fewer parameters that can be efficiently applied on these devices.  
-        </figcaption>
-      </figure>
+      <!-- Problem Figure 1 -->
+      <div class="item has-text-centered">
+        <img src="static/images/comparison.png" alt="TOA Radiance Visualization"
+             style="max-width: 100%; height: auto;" />
+        <h2 class="subtitle has-text-centered mt-4">
+          <strong>Figure 2:</strong> Comparison of different architecture designs: (a) CNN, (b) ViT, and (c) Vision Mamba, emphasizing their capacities to capture short-range and long-range dependencies.
+        </h2>
+      </div>
 
-      <!-- Add more figures here as needed -->
+      <!-- Problem Figure 2 -->
+      <div class="item has-text-centered">
+        <img src="static/images/sample.png" alt="Atmospheric Correction Visualization"
+             style="max-width: 100%; height: auto;" />
+        <h2 class="subtitle has-text-centered mt-4">
+          <strong>Figure 2b:</strong> Atmospheric correction removes distortions to recover 
+          accurate surface reflectance, which is critical for reliable analysis on resource-constrained platforms.
+        </h2>
+      </div>
+
     </div>
   </div>
 </section>
+
+
 
 <!-- Table Results Carousel -->
 <section class="section">
@@ -165,7 +172,7 @@ Since the atmospheric correction needs to be performed on satellites or sensors 
         <img src="static/images/table1.png" alt="Performance Table 1"
              style="max-width: 100%; height: auto;" />
         <h2 class="subtitle has-text-centered mt-4">
-          <strong>Table 1:</strong> Experimental results using different methods.
+          <strong>Table 1:</strong> Performance comparison of ConMamba with existing baseline methods on the test datasets.
         </h2>
       </div>
 
@@ -174,13 +181,34 @@ Since the atmospheric correction needs to be performed on satellites or sensors 
         <img src="static/images/table2.png" alt="Performance Table 2"
              style="max-width: 100%; height: auto;" />
         <h2 class="subtitle has-text-centered mt-4">
-          <strong>Table 2:</strong> Experimental results of different methods on the RPi4.
+          <strong>Table 2:</strong> Performance comparison of Vision Mamba and traditional encoder using dual-level contrastive loss on the
+PlantVillage dataset.
+        </h2>
+      </div>
+
+      <!-- Table 3 -->
+      <div class="item has-text-centered">
+        <img src="static/images/table3.png" alt="Performance Table 3"
+             style="max-width: 100%; height: auto;" />
+        <h2 class="subtitle has-text-centered mt-4">
+          <strong>Table 3:</strong> Performance comparison of Vision Mamba and traditional encoder using dual-level contrastive loss on the PlantDoc dataset.
+        </h2>
+      </div>
+
+      <!-- Table 4 -->
+      <div class="item has-text-centered">
+        <img src="static/images/table4.png" alt="Performance Table 4"
+             style="max-width: 100%; height: auto;" />
+        <h2 class="subtitle has-text-centered mt-4">
+          <strong>Table 4:</strong>  Performance comparison of Vision Mamba and traditional encoder using dual-level contrastive loss on the Citrus
+dataset.
         </h2>
       </div>
 
     </div>
   </div>
 </section>
+
 
 
 <!-- Visual Results Carousel -->
@@ -191,19 +219,38 @@ Since the atmospheric correction needs to be performed on satellites or sensors 
 
       <!-- Visual 1 -->
       <div class="item has-text-centered">
-        <img src="static/images/exp_1.png" alt="Visual Result 1"
+        <img src="static/images/v1.png" alt="Visual Result 1"
              style="max-width: 100%; height: auto;" />
         <h2 class="subtitle has-text-centered mt-4">
-          <strong>Figure 1:</strong> Visualization of TOA reflectance, surface reflectance, and inferred surface reflectance for land and water surface.
+          <strong>Figure 3a:</strong> Visualization of activation maps for randomly chosen images from the PlantVillage, PlantDoc, and Citrus datasets.
         </h2>
       </div>
 
       <!-- Visual 2 -->
       <div class="item has-text-centered">
-        <img src="static/images/exp_2.png" alt="Visual Result 2"
+        <img src="static/images/v2.png" alt="Visual Result 2"
              style="max-width: 100%; height: auto;" />
         <h2 class="subtitle has-text-centered mt-4">
-          <strong>Figure 2:</strong> Visualization of TOA reflectance, surface reflectance, and inferred surface reflectance for land surface.
+          <strong>Figure 3b:</strong> t-SNE visualization of feature representations learned by ConMamba on corn plant images from the PlantVillage dataset.
+        </h2>
+      </div>
+
+      <!-- Visual 3 -->
+      <div class="item has-text-centered">
+        <img src="static/images/v3.png" alt="Visual Result 3"
+             style="max-width: 100%; height: auto;" />
+        <h2 class="subtitle has-text-centered mt-4">
+          <strong>Figure 3c:</strong>  t-SNE visualization of feature representations learned by ConMamba on corn plant images from the PlantDoc
+dataset.
+        </h2>
+      </div>
+
+      <!-- Visual 4 -->
+      <div class="item has-text-centered">
+        <img src="static/images/v4.png" alt="Visual Result 4"
+             style="max-width: 100%; height: auto;" />
+        <h2 class="subtitle has-text-centered mt-4">
+          <strong>Figure 3d:</strong> t-SNE visualization of feature representations learned by ConMamba on the Citrus dataset.
         </h2>
       </div>
 
@@ -213,12 +260,12 @@ Since the atmospheric correction needs to be performed on satellites or sensors 
 
 
 
+
 <!-- Teaser video-->
-<section class="hero teaser">
+<!-- <section class="hero teaser">
   <div class="container is-max-desktop">
     <div class="hero-body">
       <video poster="" id="tree" autoplay controls muted loop height="100%">
-        <!-- Your video here -->
         <source src="static/images/AC_project.mp4"
         type="video/mp4">
       </video>
@@ -227,24 +274,25 @@ Since the atmospheric correction needs to be performed on satellites or sensors 
       </h2>
     </div>
   </div>
-</section>
+</section> -->
 <!-- End teaser video -->
 
 
-<!--BibTex citation -->
-  <section class="section" id="BibTeX">
-    <div class="container is-max-desktop content">
-      <h2 class="title">BibTeX</h2>
-      <pre><code>@inproceedings{zhang2024efficient,
-  title={Efficient Atmospheric Correction for Onboard Processing Using Knowledge Distillation and Model Compression},
-  author={Zhang, Miaohua and Cheraghian, Ali and Qin, Yi and Benn, David and Rollan, Therese and Habili, Nariman},
-  booktitle={2024 International Conference on Digital Image Computing: Techniques and Applications (DICTA)},
-  pages={632--639},
-  year={2024},
-  organization={IEEE}
-}</code></pre>
-    </div>
+<!-- BibTex citation -->
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@misc{mamun2025conmambacontrastivevisionmamba,
+  title={ConMamba: Contrastive Vision Mamba for Plant Disease Detection}, 
+  author={Abdullah Al Mamun and Miaohua Zhang and David Ahmedt-Aristizabal and Zeeshan Hayder and Mohammad Awrangjeb},
+  year={2025},
+  eprint={2506.03213},
+  archivePrefix={arXiv},
+  primaryClass={cs.CV},
+  url={https://arxiv.org/abs/2506.03213}}</code></pre>
+  </div>
 </section>
+
 <!--End BibTex citation -->
 
 
