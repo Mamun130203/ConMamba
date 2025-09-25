@@ -1,5 +1,5 @@
 
-This is the project page for the paper "ConMamba: Contrastive Vision Mamba for Plant Disease Detection".
+This is the project page for the paper "ConMamba: Contrastive Vision Mamba for Plant Disease Detection" wich is under review in "Pattern Recognition".
 
 
 ## Website License
