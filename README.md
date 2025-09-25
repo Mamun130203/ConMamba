@@ -1,5 +1,5 @@
 
-This is the project page for the paper "Efficient Atmospheric Correction for Onboard Processing Using Knowledge Distillation and Model Compression".
+This is the project page for the paper "ConMamba: Contrastive Vision Mamba for Plant Disease Detection".
 
 
 ## Website License
